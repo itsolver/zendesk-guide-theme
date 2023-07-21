@@ -1,6 +1,9 @@
-<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
-
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<!-- Make the translated search clear button label available for use in JS -->
+<!-- See buildClearSearchButton() in script.js -->
+<script type="text/javascript">window.searchClearButtonLabelLocalized = "{{t 'search_clear'}}";</script>
 {{#unless signed_in}}
+<!-- Google Adsense for people not signed in -->
   <script data-ad-client="ca-pub-8426964036989821" async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 {{/unless}}
