@@ -5348,3 +5348,10 @@ html:root {
   gap: 4px 20px;
   justify-content: flex-end;
 }
+.footer-inner {
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+.footer-inner span {
+  white-space: nowrap;
+}
