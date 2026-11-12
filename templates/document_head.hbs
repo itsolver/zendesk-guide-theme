@@ -1,16 +1,55 @@
-<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
-
-{{#unless signed_in}}
-  <script data-ad-client="ca-pub-8426964036989821" async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-{{/unless}}
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-L12Z3KJLB4"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-L12Z3KJLB4');
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<meta name="color-scheme" content="light dark" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Source+Code+Pro&display=swap" />
+<script type="text/javascript">
+  window.itsolverSettings = function (settings) {
+    if (!window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      return settings;
+    }
+    return Object.assign({}, settings, {
+      brand_color: "#2f6fd0",
+      brand_text_color: "#ffffff",
+      text_color: "#ffffff",
+      link_color: "#a3c6f0",
+      hover_link_color: "#c4ddff",
+      visited_link_color: "#a3c6f0",
+      background_color: "#0a0a0a"
+    });
+  };
 </script>
+<!-- Make the translated search clear button label available for use in JS -->
+<!-- See buildClearSearchButton() in script.js -->
+<script type="text/javascript">window.searchClearButtonLabelLocalized = "{{t 'search_clear'}}";</script>
+<script type="text/javascript">
+  // Load ES module polyfill only for browsers that don't support ES modules
+  if (!(HTMLScriptElement.supports && HTMLScriptElement.supports('importmap'))) {
+    document.write('<script async src="{{asset 'es-module-shims.js'}}"><\/script>');
+  }
+</script>
+<script type="importmap">
+{
+  "imports": {
+    "new-request-form": "{{asset 'new-request-form-bundle.js'}}",
+    "flash-notifications": "{{asset 'flash-notifications-bundle.js'}}",
+    "service-catalog": "{{asset 'service-catalog-bundle.js'}}",
+    "approval-requests": "{{asset 'approval-requests-bundle.js'}}",
+    "approval-requests-translations": "{{asset 'approval-requests-translations-bundle.js'}}",
+    "new-request-form-translations": "{{asset 'new-request-form-translations-bundle.js'}}",
+    "service-catalog-translations": "{{asset 'service-catalog-translations-bundle.js'}}",
+    "shared": "{{asset 'shared-bundle.js'}}",
+    "ticket-fields": "{{asset 'ticket-fields-bundle.js'}}",
+    "wysiwyg": "{{asset 'wysiwyg-bundle.js'}}"
+  }
+}
+</script>
+<script type="module">
+  import { renderFlashNotifications } from "flash-notifications";
+
+  const settings = window.itsolverSettings({{json settings}});
+  const baseLocale = {{json help_center.base_locale}};
+
+  renderFlashNotifications(settings, baseLocale);
+</script>
+
