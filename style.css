@@ -5302,3 +5302,49 @@ html:root {
     color: var(--its-link) !important;
   }
 }
+
+:root {
+  --its-search-border: #8c8c8c;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --its-search-border: #6b6b6b;
+  }
+}
+.search {
+  box-shadow: inset 0 0 0 1px var(--its-search-border);
+}
+.search:focus-within {
+  box-shadow: inset 0 0 0 1px var(--its-search-border), var(--its-focus);
+}
+
+.header {
+  height: 64px;
+}
+.user-nav-list .sign-in {
+  align-items: center;
+  background-color: var(--its-accent);
+  border-radius: 4px;
+  color: var(--its-accent-ink);
+  display: inline-flex;
+  height: 40px;
+  padding: 0 16px;
+}
+.user-nav-list .sign-in:hover, .user-nav-list .sign-in:focus {
+  background-color: var(--its-accent-hover);
+  color: var(--its-accent-ink);
+}
+
+.footer, .footer a {
+  color: var(--its-ink-3);
+}
+.footer a:hover {
+  color: var(--its-ink);
+}
+.footer-language-selector {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+  justify-content: flex-end;
+}
